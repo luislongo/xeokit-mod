@@ -1,5 +1,5 @@
 {
-  "name": "xeokit-mod",
+  "name": "@luislongo/xeokit-mod",
   "version": "1.0.0",
   "description": "Web Programming Toolkit for 3D/2D BIM and AEC Graphics",
   "module": "/dist/xeokit-sdk.es.js",
