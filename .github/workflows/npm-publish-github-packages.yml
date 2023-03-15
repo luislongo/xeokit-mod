@@ -1,0 +1,31 @@
+name: Create release based on version changed
+
+on:
+  push:
+    branches:
+      - main
+
+permissions: write-all
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: https://npm.pkg.github.com/
+      - name: Autorelease
+        uses: justincy/github-action-npm-release@2.0.2
+      - name: Install dependencies
+        run: |
+          npm i --legacy-peer-deps
+          npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
