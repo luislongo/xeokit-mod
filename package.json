@@ -14,7 +14,11 @@
     "/dist",
     "/types"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luislongo/xeokit-mod"
+  },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "registry": "https://npm.pkg.github.com/luislongo/xeokit-mod"
   }
 }
